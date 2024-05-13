@@ -644,3 +644,37 @@
 2024-05-13 18:25:27.170+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] [system/00000000] Checkpoint triggered by "Scheduled checkpoint for every 15 minutes threshold" @ txId: 37 checkpoint started...
 2024-05-13 18:25:27.265+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] [system/00000000] Checkpoint triggered by "Scheduled checkpoint for every 15 minutes threshold" @ txId: 37 checkpoint completed in 94ms. Checkpoint flushed 69 pages (0% of total available pages), in 69 IOs. Checkpoint performed with IO limit: unlimited, paused in total 0 times( 0 millis).
 2024-05-13 18:25:27.265+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] [system/00000000] No log version pruned. The strategy used was '2 days'. 
+2024-05-13 20:50:41.553+0000 INFO  [o.n.g.f.DatabaseManagementServiceFactory] Shutdown started
+2024-05-13 20:50:41.676+0000 INFO  [o.n.b.BoltServer] Requested Bolt server shutdown
+2024-05-13 20:50:41.678+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopping remaining idle connections for connector bolt-local
+2024-05-13 20:50:41.678+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopped 0 idling connections for connector bolt-local
+2024-05-13 20:50:41.685+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopping remaining idle connections for connector bolt
+2024-05-13 20:50:41.686+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopped 0 idling connections for connector bolt
+2024-05-13 20:50:41.693+0000 INFO  [o.n.d.d.DatabaseLifecycles] Stopping 'DatabaseId{eb0edcb4[neo4j]}'.
+2024-05-13 20:50:41.733+0000 INFO  [o.n.k.a.DatabaseAvailabilityGuard] [neo4j/eb0edcb4] Requirement `Database unavailable` makes database neo4j unavailable.
+2024-05-13 20:50:41.733+0000 INFO  [o.n.k.a.DatabaseAvailabilityGuard] [neo4j/eb0edcb4] DatabaseId{eb0edcb4[neo4j]} is unavailable.
+2024-05-13 20:50:41.740+0000 INFO  [o.n.k.d.Database] [neo4j/eb0edcb4] Waiting for closing transactions.
+2024-05-13 20:50:41.744+0000 INFO  [o.n.k.d.Database] [neo4j/eb0edcb4] All transactions are closed.
+2024-05-13 20:50:41.745+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] [neo4j/eb0edcb4] Checkpoint triggered by "Database shutdown" @ txId: 3 checkpoint started...
+2024-05-13 20:50:41.803+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] [neo4j/eb0edcb4] Checkpoint triggered by "Database shutdown" @ txId: 3 checkpoint completed in 56ms. Checkpoint flushed 22 pages (0% of total available pages), in 22 IOs. Checkpoint performed with IO limit: unlimited, paused in total 0 times( 0 millis).
+2024-05-13 20:50:41.803+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] [neo4j/eb0edcb4] No log version pruned. The strategy used was '2 days'. 
+2024-05-13 20:50:41.832+0000 WARN  [o.n.k.i.t.l.f.c.CheckpointFileChannelNativeAccessor] [neo4j/eb0edcb4] Unable to evict transaction log from cache with version: 0. Error: ErrorCode=-1, errorMessage='Incorrect file descriptor.'
+2024-05-13 20:50:41.834+0000 WARN  [o.n.k.i.t.l.f.LogFileChannelNativeAccessor] [neo4j/eb0edcb4] Unable to evict transaction log from cache with version: 0. Error: ErrorCode=-1, errorMessage='Incorrect file descriptor.'
+2024-05-13 20:50:41.893+0000 INFO  [o.n.d.d.DatabaseLifecycles] Stopped 'DatabaseId{eb0edcb4[neo4j]}' successfully.
+2024-05-13 20:50:41.893+0000 INFO  [o.n.d.d.DatabaseLifecycles] Stopping 'DatabaseId{00000000[system]}'.
+2024-05-13 20:50:41.894+0000 INFO  [o.n.k.a.DatabaseAvailabilityGuard] [system/00000000] Requirement `Database unavailable` makes database system unavailable.
+2024-05-13 20:50:41.894+0000 INFO  [o.n.k.a.DatabaseAvailabilityGuard] [system/00000000] DatabaseId{00000000[system]} is unavailable.
+2024-05-13 20:50:41.895+0000 INFO  [o.n.k.d.Database] [system/00000000] Waiting for closing transactions.
+2024-05-13 20:50:41.896+0000 INFO  [o.n.k.d.Database] [system/00000000] All transactions are closed.
+2024-05-13 20:50:41.896+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] [system/00000000] Checkpoint triggered by "Database shutdown" @ txId: 37 checkpoint started...
+2024-05-13 20:50:41.955+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] [system/00000000] Checkpoint triggered by "Database shutdown" @ txId: 37 checkpoint completed in 58ms. Checkpoint flushed 27 pages (0% of total available pages), in 26 IOs. Checkpoint performed with IO limit: unlimited, paused in total 0 times( 0 millis).
+2024-05-13 20:50:41.955+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] [system/00000000] No log version pruned. The strategy used was '2 days'. 
+2024-05-13 20:50:41.981+0000 WARN  [o.n.k.i.t.l.f.c.CheckpointFileChannelNativeAccessor] [system/00000000] Unable to evict transaction log from cache with version: 0. Error: ErrorCode=-1, errorMessage='Incorrect file descriptor.'
+2024-05-13 20:50:41.983+0000 WARN  [o.n.k.i.t.l.f.LogFileChannelNativeAccessor] [system/00000000] Unable to evict transaction log from cache with version: 0. Error: ErrorCode=-1, errorMessage='Incorrect file descriptor.'
+2024-05-13 20:50:42.037+0000 INFO  [o.n.d.d.DatabaseLifecycles] Stopped 'DatabaseId{00000000[system]}' successfully.
+2024-05-13 20:50:42.043+0000 INFO  [o.n.b.BoltServer] Shutting down Bolt server
+2024-05-13 20:50:42.043+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopping 0 connections for connector bolt-local
+2024-05-13 20:50:42.044+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopped all remaining connections for connector bolt-local
+2024-05-13 20:50:42.044+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopping 0 connections for connector bolt
+2024-05-13 20:50:42.044+0000 INFO  [o.n.b.p.c.c.ConnectionRegistry] Stopped all remaining connections for connector bolt
+2024-05-13 20:50:47.061+0000 INFO  [o.n.b.BoltServer] Bolt server has been shut down
