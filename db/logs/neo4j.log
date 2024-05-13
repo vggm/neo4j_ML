@@ -1,0 +1,11 @@
+2024-05-13 18:10:14.952+0000 INFO  Logging config in use: Embedded default config 'default-user-logs.xml'
+2024-05-13 18:10:14.957+0000 INFO  Starting...
+2024-05-13 18:10:15.615+0000 INFO  This instance is ServerId{5d6c87bd} (5d6c87bd-8ef6-48a5-ad55-a825cad0dcdf)
+2024-05-13 18:10:16.304+0000 INFO  ======== Neo4j 5.19.0 ========
+2024-05-13 18:10:18.397+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+2024-05-13 18:10:19.137+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+2024-05-13 18:10:19.139+0000 INFO  Remote interface available at http://localhost:7474/
+2024-05-13 18:10:19.144+0000 INFO  id: 7D05A05CF544DABA5A22CF1B6D8FA8F757AC15332CBAB2727321557B3A496A9A
+2024-05-13 18:10:19.146+0000 INFO  name: system
+2024-05-13 18:10:19.146+0000 INFO  creationDate: 2024-05-13T18:10:16.942Z
+2024-05-13 18:10:19.147+0000 INFO  Started.

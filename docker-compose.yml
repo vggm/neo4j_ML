@@ -1,0 +1,19 @@
+version: '3'
+services:
+ neo4j:
+   image: neo4j:latest
+
+   restart: unless-stopped
+
+   environment:
+     - NEO4J_AUTH=neo4j/password
+
+   ports:
+     - "7800:7474" # Puerto para Neo4j browser
+     - "7999:7687" # Puerto para conexiones Bolt
+
+   volumes:
+     - ./db/data:/data
+     - ./db/conf:/conf
+     - ./db/logs:/logs
+     - ./db/plugins:/plugins
