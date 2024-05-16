@@ -1,7 +1,7 @@
 import pandas as pd
 from neo4j import GraphDatabase
 from rich import print as rprint
-from ActionsForDB import *
+from AccessMethodsForNeo4jBD import *
 
 URI = "neo4j://localhost:7999"
 AUTH = ("neo4j", "password")
@@ -14,7 +14,7 @@ def login() -> str:
     confirm = input()
   
 
-  
+
   query = """
     MERGE (u:User {name: $username})
     RETURN u IS NOT NULL AS user_exists
@@ -108,7 +108,7 @@ if __name__ == "__main__":
     try:
       driver.verify_connectivity()
     except:
-      print("- No puedo conectarse a la Base de Datos")
+      print("- No pudo conectarse a la Base de Datos")
       exit(1)
     with driver.session() as session:
       main()
