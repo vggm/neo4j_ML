@@ -138,7 +138,7 @@ def show_friend_recomendations(user: str, session: Session, limit=5):
   query = (
     "MATCH (u:User {name: $user_name})-[:FRIEND]->()-[:LIKES]->(b:Book) "
     "WHERE NOT (u)-[:LIKES]->(b) "
-    "RETURN b.title AS title, COUNT(*) AS friend_likes "
+    "RETURN b.title AS title, b.author as author, b.rating as rating, COUNT(*) AS friend_likes "
     "ORDER BY friend_likes DESC "
     "LIMIT $books_limit"
   )
@@ -146,7 +146,13 @@ def show_friend_recomendations(user: str, session: Session, limit=5):
   try:
     result = session.run(query, user_name=user, books_limit=limit)
     for i, record in enumerate(result, start=1):
-      rprint(f"{i}> Title: {record["title"]} - Friend's likes: {record["friend_likes"]}")
+      rprint(f"- [ {i} ] -")
+      rprint(f"""
+        title:           {record["title"]}
+        author:          {record["author"]}
+        rating:          {record["rating"]}
+        friend's likes:  {record["friend_likes"]}\n
+      """)
   except:
     return None
   
@@ -165,11 +171,22 @@ def show_books_from_author(author: str, session: Session):
   query = """
     MATCH (a:Author)-[:WROTE]->(b:Book)
     WHERE toLower(a.name) CONTAINS toLower($author_name)
-    RETURN b.title as title, b.rating as rating
+    RETURN b.title as title, b.pages as pages, b.rating as rating,
+           b.author as author, b.publishDate as date, b.price as price,
+           b.likedPercent as liked
   """
   result = session.run(query, author_name=author)
   for i, record in enumerate(result, start=1):
-    rprint(f"{i}> {record["title"]} ({record["rating"]})")
+    rprint(f"- [ {i} ] -")
+    rprint(f"""
+      title:  {record["title"]}
+      author: {record["author"]}
+      rating: {record["rating"]}
+      liked:  {record["liked"]}
+      pages:  {record["pages"]}
+      price:  {record["price"]}
+      date:   {record["date"]}\n
+    """)
 
 def show_book_info(book: str, session: Session):
   query = """

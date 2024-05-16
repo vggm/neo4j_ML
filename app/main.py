@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 from neo4j import GraphDatabase
 from rich import print as rprint
@@ -5,6 +6,15 @@ from AccessMethodsForNeo4jBD import *
 
 URI = "neo4j://localhost:7999"
 AUTH = ("neo4j", "password")
+
+
+def clear_console():
+  # Detectar el sistema operativo
+  if os.name == 'nt':  # Si el sistema operativo es Windows
+    os.system('cls')
+  else:  # Si el sistema operativo es macOS o Linux
+    os.system('clear')
+
 
 def login() -> str:
   confirm = 'n'
@@ -31,6 +41,7 @@ def login() -> str:
 
 
 def choose_opt() -> int:
+  clear_console()
   total_options = 10
   actions_msg = """
    - Que opcion desea tomar?
